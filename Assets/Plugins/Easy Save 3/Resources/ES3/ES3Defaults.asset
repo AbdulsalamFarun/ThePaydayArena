@@ -41,8 +41,6 @@ MonoBehaviour:
     - Assembly-CSharp
     - Assembly-CSharp-firstpass
     - ECM2
-    - Kybernetik.Animancer
-    - Kybernetik.Animancer.FSM
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1
