@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 219343553}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 219343551}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.4, z: 5.86}
+  m_LocalPosition: {x: 0, y: 1.26, z: 5.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1439,8 +1439,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 219343552}
-  attackRange: 2
   behaviorTree: {fileID: 11400000, guid: 18ec894b1e4033344b2e6a81689d8dc7, type: 2}
+  attackRange: 2
+  animator: {fileID: 1648561977}
 --- !u!1 &1790299544
 GameObject:
   m_ObjectHideFlags: 0
