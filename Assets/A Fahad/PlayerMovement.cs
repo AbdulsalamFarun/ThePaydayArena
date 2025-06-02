@@ -13,8 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private bool jumpRequested = false;
     public float jumpForce = 15f;
 
-    public float jumpHeight = 5f;
-    public float gravity = -9.81f;
+    Animator animator;
 
     Rigidbody rb;
 
@@ -23,12 +22,17 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
 
     }
 
     void Update()
     {
         // Debug.Log(moveInput);
+        Vector3 horizontalVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
+        float speed = horizontalVelocity.magnitude;
+
+        animator.SetFloat("Speed", speed);
     }
 
     void FixedUpdate()
