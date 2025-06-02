@@ -13,6 +13,7 @@ public class ChaseTargetNode : BTNode
         if (distance > ai.attackRange)
         {
             ai.MoveTo(ai.target.position);
+            Debug.Log("Running Behaviour");
             return State.Running;
         }
 

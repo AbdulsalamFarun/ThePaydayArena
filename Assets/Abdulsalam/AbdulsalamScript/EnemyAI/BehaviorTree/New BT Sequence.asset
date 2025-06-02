@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: New BT Sequence
   m_EditorClassIdentifier: 
   children:
-  - {fileID: 11400000, guid: 0702304509bbe114997bba983e388384, type: 2}
   - {fileID: 11400000, guid: 80902c11cd731264486f1fdf08ed6408, type: 2}
+  - {fileID: 11400000, guid: 0702304509bbe114997bba983e388384, type: 2}
