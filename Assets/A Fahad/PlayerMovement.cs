@@ -17,6 +17,9 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody rb;
 
+    public Transform cameraTransform; // اسحب الكاميرا هنا من Inspector
+
+
     public float speed = 5f;
     public float Sprint = 10f;
 
@@ -33,8 +36,27 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         //Player Movement
-        rb.linearVelocity = new Vector3(moveInput.x * currentSpeed, rb.linearVelocity.y, moveInput.y * currentSpeed);
+        // احسب اتجاه الحركة بناءً على الكاميرا
+        Vector3 camForward = cameraTransform.forward;
+        Vector3 camRight = cameraTransform.right;
 
+        // تجاهل المحور العمودي (Y) لأننا ما نبغى اللاعب يطير
+        camForward.y = 0;
+        camRight.y = 0;
+        camForward.Normalize();
+        camRight.Normalize();
+
+        // الاتجاه النهائي حسب الكاميرا
+        Vector3 moveDirection = camForward * moveInput.y + camRight * moveInput.x;
+
+        // طبّق الحركة
+        rb.linearVelocity = new Vector3(moveDirection.x * currentSpeed, rb.linearVelocity.y, moveDirection.z * currentSpeed);
+
+        // تدوير اللاعب باتجاه الحركة
+        if (moveDirection.sqrMagnitude > 0.01f)
+        {
+            transform.forward = moveDirection;
+        }
 
         //Player Jump
         if (jumpRequested)
