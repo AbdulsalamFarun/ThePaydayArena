@@ -344,8 +344,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 13.74, y: 13.74, z: 13.74}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -486,6 +486,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: b5c5a5a9-3fa2-4f5e-b24f-14575d1ae7f3
     m_ActionName: UI/New action
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 521c51c2-6229-4dfe-ac0a-18fb49ddf24a
+    m_ActionName: 'Player/Sprint[/Keyboard/leftShift]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -506,7 +510,9 @@ MonoBehaviour:
   groundCheck: {fileID: 915123549}
   groundDistance: 0.2
   jumpForce: 5
+  dogeForce: 5
   speed: 5
+  Sprint: 10
 --- !u!1 &685297040
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,7 +534,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &685297041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,7 +550,9 @@ MonoBehaviour:
   groundCheck: {fileID: 952171236}
   groundDistance: 0.2
   jumpForce: 5
+  dogeForce: 5
   speed: 5
+  Sprint: 10
 --- !u!114 &685297042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,13 +611,41 @@ MonoBehaviour:
     m_ActionId: dc332293-82b5-4048-ae99-5f6f21822af4
     m_ActionName: 'Player/Jump[/Keyboard/space,/DualSenseGamepadHID/buttonSouth]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 685297041}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnDoge
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 6880d9f3-bccc-44d0-9343-7f8604d5457d
     m_ActionName: 'Player/Doge[/Keyboard/z]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: b5c5a5a9-3fa2-4f5e-b24f-14575d1ae7f3
     m_ActionName: UI/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 685297041}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnSprint
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 521c51c2-6229-4dfe-ac0a-18fb49ddf24a
+    m_ActionName: 'Player/Sprint[/Keyboard/leftShift]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -699,14 +735,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 685297040}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.044, z: 0}
+  m_LocalRotation: {x: -0, y: 0.43232164, z: -0, w: 0.9017195}
+  m_LocalPosition: {x: 1.643, y: 1.044, z: 1.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 952171236}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 51.23, z: 0}
 --- !u!54 &685297047
 Rigidbody:
   m_ObjectHideFlags: 0

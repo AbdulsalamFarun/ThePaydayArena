@@ -11,34 +11,29 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.2f;
 
     private bool jumpRequested = false;
+    private bool dogeRequested = false;
     public float jumpForce = 15f;
-
-    Animator animator;
+    public float dogeForce = 5f;
 
     Rigidbody rb;
 
     public float speed = 5f;
+    public float Sprint = 10f;
+
+    private float currentSpeed;
+
+    private bool isSprinting = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        animator = GetComponent<Animator>();
-
-    }
-
-    void Update()
-    {
-        // Debug.Log(moveInput);
-        Vector3 horizontalVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
-        float speed = horizontalVelocity.magnitude;
-
-        animator.SetFloat("Speed", speed);
+        currentSpeed = speed;
     }
 
     void FixedUpdate()
     {
         //Player Movement
-        rb.linearVelocity = new Vector3(moveInput.x * speed, rb.linearVelocity.y, moveInput.y * speed);
+        rb.linearVelocity = new Vector3(moveInput.x * currentSpeed, rb.linearVelocity.y, moveInput.y * currentSpeed);
 
 
         //Player Jump
@@ -61,6 +56,35 @@ public class PlayerMovement : MonoBehaviour
 
             jumpRequested = true;
             Debug.Log("Jumped = " + jumpRequested);
+        }
+    }
+
+    public void OnDoge(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            // dogeRequested = true;
+            Debug.Log("Doged");
+
+            rb.AddRelativeForce(Vector3.forward * dogeForce, ForceMode.Impulse);
+        }
+
+    }
+
+    public void OnSprint(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            // Start sprinting when Shift is held
+            currentSpeed = Sprint;
+            Debug.Log("Sprinting started");
+        }
+
+        if (context.canceled)
+        {
+            // Stop sprinting when Shift is released
+            currentSpeed = speed;
+            Debug.Log("Sprinting stopped");
         }
     }
 
