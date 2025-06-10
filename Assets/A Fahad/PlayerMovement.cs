@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Vector2 moveInput;
+    public Vector2 moveInput { get; private set; }
 
     public Transform groundCheck;
     public float groundDistance = 0.2f;
@@ -37,26 +37,26 @@ public class PlayerMovement : MonoBehaviour
     {
         //Player Movement
         // احسب اتجاه الحركة بناءً على الكاميرا
-        Vector3 camForward = cameraTransform.forward;
-        Vector3 camRight = cameraTransform.right;
+        // Vector3 camForward = cameraTransform.forward;
+        // Vector3 camRight = cameraTransform.right;
 
         // تجاهل المحور العمودي (Y) لأننا ما نبغى اللاعب يطير
-        camForward.y = 0;
-        camRight.y = 0;
-        camForward.Normalize();
-        camRight.Normalize();
+        // camForward.y = 0;
+        // camRight.y = 0;
+        // camForward.Normalize();
+        // camRight.Normalize();
 
         // الاتجاه النهائي حسب الكاميرا
-        Vector3 moveDirection = camForward * moveInput.y + camRight * moveInput.x;
+        // Vector3 moveDirection = camForward * moveInput.y + camRight * moveInput.x;
 
         // طبّق الحركة
-        rb.linearVelocity = new Vector3(moveDirection.x * currentSpeed, rb.linearVelocity.y, moveDirection.z * currentSpeed);
+        // rb.linearVelocity = new Vector3(moveDirection.x * currentSpeed, rb.linearVelocity.y, moveDirection.z * currentSpeed);
 
         // تدوير اللاعب باتجاه الحركة
-        if (moveDirection.sqrMagnitude > 0.01f)
-        {
-            transform.forward = moveDirection;
-        }
+        // if (moveDirection.sqrMagnitude > 0.01f)
+        // {
+        //     transform.forward = moveDirection;
+        // }
 
         //Player Jump
         if (jumpRequested)

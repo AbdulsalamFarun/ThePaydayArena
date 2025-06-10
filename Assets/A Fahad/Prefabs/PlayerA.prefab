@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 3691652805113018640}
   - component: {fileID: 5118956059043895288}
   - component: {fileID: 8674787632700678657}
+  - component: {fileID: 8796938679265886715}
   m_Layer: 0
   m_Name: PlayerA
   m_TagString: Untagged
@@ -198,6 +199,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c6e466793a5824ca080af617f46a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <PlayerMovement>k__BackingField: {fileID: 5118956059043895288}
+  <Controller>k__BackingField: {fileID: 8796938679265886715}
+  <FreeLookMovementSpeed>k__BackingField: 6
 --- !u!114 &5118956059043895288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +339,31 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!143 &8796938679265886715
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141058430772800207}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 1.85
+  m_Radius: 0.25
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.025
+  m_MinMoveDistance: 0
+  m_Center: {x: 0, y: 0.925, z: 0}
 --- !u!1 &248945608379212791
 GameObject:
   m_ObjectHideFlags: 0

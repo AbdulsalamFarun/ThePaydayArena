@@ -10,23 +10,25 @@ public class PlayerTestState : PlayerBaseState
 
     public override void Enter()
     {
-        Debug.Log("Enter");
+
     }
 
     public override void Tick(float deltaTime)
     {
-        timer -= deltaTime;
+        Vector3 movement = new Vector3();
+        movement.x = stateMachine.PlayerMovement.moveInput.x;
+        movement.y = 0f;
+        movement.z = stateMachine.PlayerMovement.moveInput.y;
 
-        Debug.Log(timer);
+        stateMachine.Controller.Move(movement * stateMachine.FreeLookMovementSpeed * deltaTime);
 
-        if(timer <= 0f)
-        {
-            stateMachine.SwitchState(new PlayerTestState(stateMachine));
-        }
+        if (stateMachine.PlayerMovement.moveInput == Vector2.zero) { return; }
+        
+        stateMachine.transform.rotation = Quaternion.LookRotation(movement);
     }
 
     public override void Exit()
     {
-        Debug.Log("Exit");
+
     }
 }
