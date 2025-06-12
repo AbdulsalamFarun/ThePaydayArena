@@ -7,6 +7,11 @@ public class PlayerMovement : MonoBehaviour
 {
     public Vector2 moveInput { get; private set; }
 
+    public bool IsAttacking { get; private set; }
+
+    public event Action TargetEvent;
+    public event Action CancelEvent;
+
     public Transform groundCheck;
     public float groundDistance = 0.2f;
 
@@ -59,12 +64,12 @@ public class PlayerMovement : MonoBehaviour
         // }
 
         //Player Jump
-        if (jumpRequested)
-        {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        // if (jumpRequested)
+        // {
+        //     rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 
-        }
-        jumpRequested = false; // Reset jump request after applying force
+        // }
+        // jumpRequested = false; // Reset jump request after applying force
     }
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -109,6 +114,38 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Sprinting stopped");
         }
     }
+
+    public void OnTarget(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            TargetEvent?.Invoke(); 
+            Debug.Log("Targeting event triggered");
+
+        }
+    }
+
+    public void OnCancel(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            CancelEvent?.Invoke();
+            Debug.Log("Cancel event triggered");
+        }
+    }
+
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            IsAttacking = true;
+        }
+        else if (context.canceled)
+        {
+            IsAttacking = false;
+        }
+    }
+    
 
     void OnDrawGizmos()
     {

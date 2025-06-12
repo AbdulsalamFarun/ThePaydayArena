@@ -12,11 +12,16 @@ public class PlayerFreeLookState : PlayerBaseState
 
     public override void Enter()
     {
-
+        stateMachine.PlayerMovement.TargetEvent += OnTarget;
     }
 
     public override void Tick(float deltaTime)
     {
+        if (stateMachine.PlayerMovement.IsAttacking)
+        {
+            stateMachine.SwitchState(new PlayerAttackingState(stateMachine , 0));
+            return;
+        }
         Vector3 movement = CalculateMovement();
 
         stateMachine.Controller.Move(movement * stateMachine.FreeLookMovementSpeed * deltaTime);
@@ -34,7 +39,12 @@ public class PlayerFreeLookState : PlayerBaseState
 
     public override void Exit()
     {
+        stateMachine.PlayerMovement.TargetEvent -= OnTarget;
+    }
 
+    private void OnTarget()
+    {
+        stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
     }
 
     private Vector3 CalculateMovement()

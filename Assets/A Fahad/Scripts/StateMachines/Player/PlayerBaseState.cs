@@ -10,4 +10,15 @@ public abstract class PlayerBaseState : State
     {
         this.stateMachine = stateMachine;
     }
+
+    protected void Move(float deltaTime)
+    {
+
+    }
+
+    protected void FaceTarget()
+    {
+        if (stateMachine.Targeter.CurrentTarget == null) { return; }
+    }
+     
 }
