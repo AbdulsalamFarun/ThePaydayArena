@@ -18,7 +18,7 @@ public abstract class PlayerBaseState : State
 
     protected void FaceTarget()
     {
-        if (stateMachine.Targeter.CurrentTarget == null) { return; }
+        // if (stateMachine.Targeter.CurrentTarget == null) { return; }
     }
      
 }

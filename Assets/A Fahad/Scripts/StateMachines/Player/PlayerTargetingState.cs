@@ -11,11 +11,12 @@ public class PlayerTargetingState : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
-        if (stateMachine.PlayerMovement.IsAttacking)
-        {
-            stateMachine.SwitchState(new PlayerAttackingState(stateMachine , 0));
-            return;
-        }
+        Debug.Log(stateMachine.Targeter.CurrentTarget.name);
+        // if (stateMachine.PlayerMovement.IsAttacking)
+        // {
+        //     stateMachine.SwitchState(new PlayerAttackingState(stateMachine , 0));
+        //     return;
+        // }
     }
 
     public override void Exit()
@@ -26,6 +27,7 @@ public class PlayerTargetingState : PlayerBaseState
 
     private void OnCancel()
     {
+        stateMachine.Targeter.Cancel();
         stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
     }
 }

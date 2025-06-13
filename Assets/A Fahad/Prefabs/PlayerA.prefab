@@ -205,6 +205,7 @@ MonoBehaviour:
   <PlayerMovement>k__BackingField: {fileID: 5118956059043895288}
   <Controller>k__BackingField: {fileID: 8796938679265886715}
   <Animator>k__BackingField: {fileID: 7224783622706979875}
+  <Targeter>k__BackingField: {fileID: 0}
   <FreeLookMovementSpeed>k__BackingField: 6
   <RotationDamping>k__BackingField: 10
   <Attacks>k__BackingField:
@@ -353,15 +354,51 @@ MonoBehaviour:
     m_ActionId: b5c5a5a9-3fa2-4f5e-b24f-14575d1ae7f3
     m_ActionName: UI/New action
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5118956059043895288}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnTarget
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 8e637115-8a02-4104-9230-211028e1a38d
     m_ActionName: 'Player/Target[/Keyboard/tab]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5118956059043895288}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnCancel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 83bd028f-fd3c-4d80-828f-e4cbc86ac1a0
     m_ActionName: 'Player/Cancel[/Keyboard/escape]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5118956059043895288}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 196a1b1d-d991-4f41-9c21-235ba7ff7575
     m_ActionName: 'Player/Attack[/Mouse/leftButton]'
   m_NeverAutoSwitchControlSchemes: 0
@@ -2353,7 +2390,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42bdd2350e77a2d4fb42c1f01cc2be69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: []
 --- !u!135 &6185559914149185275
 SphereCollider:
   m_ObjectHideFlags: 0
