@@ -56,11 +56,11 @@ Material:
     m_Ints: []
     m_Floats:
     - _Cull: 2
-    - _Smoothness: 0.568
+    - _Smoothness: 0.33
     - _SmoothnessTextureChannel: 0
     m_Colors:
-    - _BaseColor: {r: 0.3886792, g: 0.3886792, b: 0.3886792, a: 0}
-    - _Color: {r: 0.38867918, g: 0.38867918, b: 0.38867918, a: 0}
+    - _BaseColor: {r: 0.4037736, g: 0.4037736, b: 0.4037736, a: 0}
+    - _Color: {r: 0.40377358, g: 0.40377358, b: 0.40377358, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &7058034000787676456
