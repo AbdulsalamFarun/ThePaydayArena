@@ -9,8 +9,9 @@ public class PlayerTargetingState : PlayerBaseState
     public override void Enter()
     {
         stateMachine.PlayerMovement.CancelEvent += OnCancel;
-
+        this.stateMachine.targetCam.Priority = 20;
         stateMachine.Animator.Play(TargetingBlendTreeHash);
+        
     }
 
     public override void Tick(float deltaTime)
@@ -20,6 +21,14 @@ public class PlayerTargetingState : PlayerBaseState
             stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
             return;
         }
+
+        FaceTarget();
+        Vector3 movement = CalculateMovment();
+        Move(movement * stateMachine.TargetingMovementSpeed , deltaTime);
+
+        
+
+
         // if (stateMachine.PlayerMovement.IsAttacking)
         // {
         //     stateMachine.SwitchState(new PlayerAttackingState(stateMachine , 0));
@@ -37,5 +46,16 @@ public class PlayerTargetingState : PlayerBaseState
     {
         stateMachine.Targeter.Cancel();
         stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+    }
+
+    private Vector3 CalculateMovment()
+    {
+        Vector3 movement = new Vector3();
+
+        movement += stateMachine.transform.right * stateMachine.PlayerMovement.moveInput.x;
+        movement += stateMachine.transform.forward * stateMachine.PlayerMovement.moveInput.y;
+
+
+        return movement;
     }
 }

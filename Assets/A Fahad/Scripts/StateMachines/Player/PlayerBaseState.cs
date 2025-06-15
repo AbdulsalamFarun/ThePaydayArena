@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public abstract class PlayerBaseState : State
 {
     protected PlayerStateMachine stateMachine;
+
+    //public
 
     public PlayerBaseState(PlayerStateMachine stateMachine)
     {
@@ -19,7 +22,14 @@ public abstract class PlayerBaseState : State
 
     protected void FaceTarget()
     {
-        // if (stateMachine.Targeter.CurrentTarget == null) { return; }
+        if (stateMachine.Targeter.CurrentTarget == null) { return; }
+         this.stateMachine.targetCam.Priority = 20;
+         
+        Vector3 lookPos = stateMachine.Targeter.CurrentTarget.transform.position - stateMachine.transform.position;
+        lookPos.y = 0f;
+        stateMachine.transform.rotation = Quaternion.LookRotation(lookPos);
+       
     }
+
      
 }
