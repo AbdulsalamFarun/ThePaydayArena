@@ -23,7 +23,7 @@ public class PlayerFreeLookState : PlayerBaseState
         // ----------------------------------------------------
         if (stateMachine.FreeLookCam != null)
         {
-            stateMachine.FreeLookCam.Priority = 10; // اجعلها أولوية عالية لتصبح هي النشطة
+            stateMachine.FreeLookCam.Priority = 15; // اجعلها أولوية عالية لتصبح هي النشطة
         }
         if (stateMachine.targetCam != null)
         {

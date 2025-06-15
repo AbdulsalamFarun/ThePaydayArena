@@ -505,7 +505,7 @@ MonoBehaviour:
     SplineCurvature: 0.5
   RecenteringTarget: 2
   HorizontalAxis:
-    Value: 43.695084
+    Value: -1
     Center: 0
     Range: {x: -180, y: 180}
     Wrap: 0
@@ -515,7 +515,7 @@ MonoBehaviour:
       Time: 2
     Restrictions: 0
   VerticalAxis:
-    Value: -9.602165
+    Value: 0.6
     Center: 17.5
     Range: {x: -10, y: 45}
     Wrap: 0
@@ -1116,6 +1116,22 @@ PrefabInstance:
       propertyPath: <Targeter>k__BackingField
       value: 
       objectReference: {fileID: 7032472445616750488}
+    - target: {fileID: 3691652805113018640, guid: 7026a21e3b68bc54da38dd06a4456821, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[0].<ComboStateIndex>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3691652805113018640, guid: 7026a21e3b68bc54da38dd06a4456821, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[1].<ComboStateIndex>k__BackingField
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3691652805113018640, guid: 7026a21e3b68bc54da38dd06a4456821, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[2].<ComboStateIndex>k__BackingField
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3691652805113018640, guid: 7026a21e3b68bc54da38dd06a4456821, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[2].<TransitionDuration>k__BackingField
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8077945448409816591, guid: 7026a21e3b68bc54da38dd06a4456821, type: 3}
       propertyPath: cineTargetGroup
       value: 

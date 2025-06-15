@@ -204,23 +204,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <PlayerMovement>k__BackingField: {fileID: 5118956059043895288}
+  <targetCam>k__BackingField: {fileID: 0}
+  <FreeLookCam>k__BackingField: {fileID: 0}
   <Controller>k__BackingField: {fileID: 8796938679265886715}
   <Animator>k__BackingField: {fileID: 7224783622706979875}
   <Targeter>k__BackingField: {fileID: 0}
+  <ForceReceiver>k__BackingField: {fileID: 0}
   <FreeLookMovementSpeed>k__BackingField: 6
+  <TargetingMovementSpeed>k__BackingField: 0
   <RotationDamping>k__BackingField: 10
   <Attacks>k__BackingField:
   - <AnimationName>k__BackingField: Attack1
     <TransitionDuration>k__BackingField: 0.1
-    <ComboStateIndex>k__BackingField: -1
-    <ComboAttackTime>k__BackingField: 0
+    <ComboStateIndex>k__BackingField: 1
+    <ComboAttackTime>k__BackingField: 0.6
   - <AnimationName>k__BackingField: Attack2
     <TransitionDuration>k__BackingField: 0.1
-    <ComboStateIndex>k__BackingField: -1
-    <ComboAttackTime>k__BackingField: 0
+    <ComboStateIndex>k__BackingField: 2
+    <ComboAttackTime>k__BackingField: 0.5
   - <AnimationName>k__BackingField: Attack3
-    <TransitionDuration>k__BackingField: 0.1
-    <ComboStateIndex>k__BackingField: -1
+    <TransitionDuration>k__BackingField: 0.2
+    <ComboStateIndex>k__BackingField: 3
     <ComboAttackTime>k__BackingField: 0
 --- !u!114 &5118956059043895288
 MonoBehaviour:
@@ -444,6 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da51b760a489c1e47b63fe3bf1f68658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
 --- !u!95 &7224783622706979875
 Animator:
   serializedVersion: 7

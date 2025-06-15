@@ -77,7 +77,7 @@ public class PlayerTargetingState : PlayerBaseState
         if (stateMachine.FreeLookCam != null)
         {
             // أعد أولوية كاميرا الـ Free Look إلى قيمتها الافتراضية/العالية لتصبح هي النشطة
-            stateMachine.FreeLookCam.Priority = 10; 
+            stateMachine.FreeLookCam.Priority = 15; 
         }
 
 
