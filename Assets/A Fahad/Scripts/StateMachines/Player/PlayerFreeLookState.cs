@@ -16,6 +16,20 @@ public class PlayerFreeLookState : PlayerBaseState
         stateMachine.PlayerMovement.TargetEvent += OnTarget;
 
         stateMachine.Animator.Play(FreeLookBlendTreeHash);
+
+
+        // ----------------------------------------------------
+        // تفعيل كاميرا الـ Free Look
+        // ----------------------------------------------------
+        if (stateMachine.FreeLookCam != null)
+        {
+            stateMachine.FreeLookCam.Priority = 10; // اجعلها أولوية عالية لتصبح هي النشطة
+        }
+        if (stateMachine.targetCam != null)
+        {
+            stateMachine.targetCam.Priority = 1; // اجعلها أولوية منخفضة لتعطيلها
+        }
+
     }
 
     public override void Tick(float deltaTime)
