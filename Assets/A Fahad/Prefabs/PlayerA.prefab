@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 5118956059043895288}
   - component: {fileID: 8674787632700678657}
   - component: {fileID: 8796938679265886715}
+  - component: {fileID: 2167854974370377645}
   - component: {fileID: 7224783622706979875}
   m_Layer: 0
   m_Name: PlayerA
@@ -431,6 +432,18 @@ CharacterController:
   m_SkinWidth: 0.025
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0.925, z: 0}
+--- !u!114 &2167854974370377645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141058430772800207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da51b760a489c1e47b63fe3bf1f68658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &7224783622706979875
 Animator:
   serializedVersion: 7
@@ -2390,6 +2403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42bdd2350e77a2d4fb42c1f01cc2be69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cineTargetGroup: {fileID: 0}
 --- !u!135 &6185559914149185275
 SphereCollider:
   m_ObjectHideFlags: 0

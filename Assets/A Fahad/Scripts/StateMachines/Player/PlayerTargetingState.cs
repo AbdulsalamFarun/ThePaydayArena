@@ -2,16 +2,24 @@ using UnityEngine;
 
 public class PlayerTargetingState : PlayerBaseState
 {
-    public PlayerTargetingState(PlayerStateMachine stateMachine) : base(stateMachine){ }
+    private readonly int TargetingBlendTreeHash = Animator.StringToHash("TargetingBlendTree");
+
+    public PlayerTargetingState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
     {
         stateMachine.PlayerMovement.CancelEvent += OnCancel;
+
+        stateMachine.Animator.Play(TargetingBlendTreeHash);
     }
 
     public override void Tick(float deltaTime)
     {
-        Debug.Log(stateMachine.Targeter.CurrentTarget.name);
+        if (stateMachine.Targeter.CurrentTarget == null)
+        {
+            stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+            return;
+        }
         // if (stateMachine.PlayerMovement.IsAttacking)
         // {
         //     stateMachine.SwitchState(new PlayerAttackingState(stateMachine , 0));
