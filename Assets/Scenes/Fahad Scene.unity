@@ -1475,8 +1475,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865138524}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.04141868, y: -0.0087190615, z: -0.00036145592, w: 0.9991038}
-  m_LocalPosition: {x: -15.891786, y: 0.7806089, z: -1.936676}
+  m_LocalRotation: {x: -0.068058684, y: 0.37113634, z: 0.027287057, w: 0.92567885}
+  m_LocalPosition: {x: -19.46429, y: 0.5044535, z: 0.05373645}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1868,6 +1868,10 @@ PrefabInstance:
     - target: {fileID: 265985243946722101, guid: 74376bbf42dfd3e489c567a97a2d1cf9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -8.880673
+      objectReference: {fileID: 0}
+    - target: {fileID: 697885744895614149, guid: 74376bbf42dfd3e489c567a97a2d1cf9, type: 3}
+      propertyPath: Priority.m_Value
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 827586702237968755, guid: 74376bbf42dfd3e489c567a97a2d1cf9, type: 3}
       propertyPath: Instructions.Array.data[0].Camera
@@ -5370,6 +5374,7 @@ GameObject:
   - component: {fileID: 4818472778301765827}
   - component: {fileID: 5596818617869472343}
   - component: {fileID: 3293730308738104403}
+  - component: {fileID: 8024583502317222955}
   m_Layer: 0
   m_Name: RustySword
   m_TagString: Untagged
@@ -5377,6 +5382,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!136 &8024583502317222955
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8024583502317222954}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.2
+  m_Height: 1.24
+  m_Direction: 1
+  m_Center: {x: 0.00021646067, y: 0.43323025, z: 0.00000001932698}
 --- !u!4 &8044669280493230912
 Transform:
   m_ObjectHideFlags: 0

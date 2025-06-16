@@ -15,7 +15,7 @@ public class PlayerTargetingState : PlayerBaseState
     {
         stateMachine.PlayerMovement.CancelEvent += OnCancel;
         
-        stateMachine.Animator.CrossFade(TargetingBlendTreeHash , .1f);
+        stateMachine.Animator.CrossFade(TargetingBlendTreeHash , .2f);
 
 
         

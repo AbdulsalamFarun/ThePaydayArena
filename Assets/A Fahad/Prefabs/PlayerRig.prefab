@@ -828,7 +828,7 @@ MonoBehaviour:
     Value: 43.695084
     Center: 0
     Range: {x: -180, y: 180}
-    Wrap: 0
+    Wrap: 1
     Recentering:
       Enabled: 0
       Wait: 1

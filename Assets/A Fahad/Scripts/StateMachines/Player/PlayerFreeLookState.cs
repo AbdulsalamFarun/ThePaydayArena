@@ -15,7 +15,7 @@ public class PlayerFreeLookState : PlayerBaseState
     {
         stateMachine.PlayerMovement.TargetEvent += OnTarget;
 
-        stateMachine.Animator.CrossFade(FreeLookBlendTreeHash,.1f);
+        stateMachine.Animator.CrossFade(FreeLookBlendTreeHash,.2f);
 
 
         // ----------------------------------------------------
