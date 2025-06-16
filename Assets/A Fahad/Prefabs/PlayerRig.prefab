@@ -1117,6 +1117,30 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7032472445616750488}
     - target: {fileID: 3691652805113018640, guid: 7026a21e3b68bc54da38dd06a4456821, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[0].<Force>k__BackingField
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3691652805113018640, guid: 7026a21e3b68bc54da38dd06a4456821, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[1].<Force>k__BackingField
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3691652805113018640, guid: 7026a21e3b68bc54da38dd06a4456821, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[2].<Force>k__BackingField
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3691652805113018640, guid: 7026a21e3b68bc54da38dd06a4456821, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[0].<ForceTime>k__BackingField
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3691652805113018640, guid: 7026a21e3b68bc54da38dd06a4456821, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[1].<ForceTime>k__BackingField
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3691652805113018640, guid: 7026a21e3b68bc54da38dd06a4456821, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[2].<ForceTime>k__BackingField
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3691652805113018640, guid: 7026a21e3b68bc54da38dd06a4456821, type: 3}
       propertyPath: <Attacks>k__BackingField.Array.data[0].<ComboStateIndex>k__BackingField
       value: 1
       objectReference: {fileID: 0}

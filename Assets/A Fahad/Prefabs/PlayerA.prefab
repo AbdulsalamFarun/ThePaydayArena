@@ -218,14 +218,20 @@ MonoBehaviour:
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 1
     <ComboAttackTime>k__BackingField: 0.6
+    <ForceTime>k__BackingField: 0
+    <Force>k__BackingField: 0
   - <AnimationName>k__BackingField: Attack2
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 2
     <ComboAttackTime>k__BackingField: 0.5
+    <ForceTime>k__BackingField: 0
+    <Force>k__BackingField: 0
   - <AnimationName>k__BackingField: Attack3
     <TransitionDuration>k__BackingField: 0.2
     <ComboStateIndex>k__BackingField: 3
     <ComboAttackTime>k__BackingField: 0
+    <ForceTime>k__BackingField: 0
+    <Force>k__BackingField: 0
 --- !u!114 &5118956059043895288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,6 +455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
+  drag: 0.3
 --- !u!95 &7224783622706979875
 Animator:
   serializedVersion: 7

@@ -15,7 +15,7 @@ public class PlayerTargetingState : PlayerBaseState
     {
         stateMachine.PlayerMovement.CancelEvent += OnCancel;
         
-        stateMachine.Animator.Play(TargetingBlendTreeHash);
+        stateMachine.Animator.CrossFade(TargetingBlendTreeHash , .1f);
 
 
         
@@ -52,11 +52,11 @@ public class PlayerTargetingState : PlayerBaseState
         FaceTarget();
 
 
-        // if (stateMachine.PlayerMovement.IsAttacking)
-        // {
-        //     stateMachine.SwitchState(new PlayerAttackingState(stateMachine , 0));
-        //     return;
-        // }
+        if (stateMachine.PlayerMovement.IsAttacking)
+        {
+            stateMachine.SwitchState(new PlayerAttackingState(stateMachine , 0));
+            return;
+        }
     }
 
 
