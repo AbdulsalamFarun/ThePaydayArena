@@ -14,7 +14,7 @@ public class EnemyActions : MonoBehaviour
     // The Behavior Graph will call this method to set the target.
     public void SetTarget(Transform target)
     {
-        currentTarget = target;
+        currentTarget = target;  
     }
 
     // This is the core logic method that the Behavior Graph will trigger.
@@ -25,14 +25,16 @@ public class EnemyActions : MonoBehaviour
             return; // Do nothing if there's no target
         }
 
-        // Find the direction vector pointing from us to the target
-        Vector3 direction = currentTarget.position - transform.position;
-        direction.y = 0; // Keep the enemy upright, don't look up/down
+        //// Find the direction vector pointing from us to the target
+        //Vector3 direction = currentTarget.position - transform.position;
+        //direction.y = 0; // Keep the enemy upright, don't look up/down
 
-        // Create a rotation that looks along that direction
-        Quaternion lookRotation = Quaternion.LookRotation(direction);
+        //// Create a rotation that looks along that direction
+        //Quaternion lookRotation = Quaternion.LookRotation(direction);
 
-        // Smoothly rotate from our current rotation to the target rotation
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed);
+        //// Smoothly rotate from our current rotation to the target rotation
+        //transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed);
+
+        transform.LookAt(currentTarget);
     }
 }

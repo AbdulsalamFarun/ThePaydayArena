@@ -11,9 +11,8 @@ public partial class LookAtTargetTaskAction : Action
     [SerializeReference] public BlackboardVariable<GameObject> Self;
     [SerializeReference] public BlackboardVariable<EnemyActions> Look;
     [SerializeReference] public BlackboardVariable<GameObject> Target;
-
-    public BlackboardVariable<Transform> targetToLookAt;
-    private EnemyActions enemyActions;
+    //public BlackboardVariable<Transform> targetToLookAt;
+    //private EnemyActions enemyActions;
     protected override Status OnStart()
     {
         return Status.Running;
@@ -22,17 +21,26 @@ public partial class LookAtTargetTaskAction : Action
     protected override Status OnUpdate()
     {
         // 1. Check if we can execute the logic
-        if (enemyActions == null || targetToLookAt.Value == null)
+        if (Target.Value.transform == null)
         {
             // If something is wrong, fail the task.
+            Debug.Log("No Player Found");
             return Status.Failure;
         }
 
+        if (Look.Value == null)
+        {
+            Debug.Log("No EnemyActions Found");
+            return Status.Failure;
+        }
+
+       
+
         // 2. Pass the target from the Blackboard to our script
-        enemyActions.SetTarget(targetToLookAt.Value);
+        Look.Value.SetTarget(Target.Value.transform);
 
         // 3. Call the logic method on the script
-        enemyActions.SmoothLookAtTarget();
+        Look.Value.SmoothLookAtTarget();
         return Status.Success;
     }
 
