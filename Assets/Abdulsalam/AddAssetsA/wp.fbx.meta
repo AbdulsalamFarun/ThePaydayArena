@@ -3,7 +3,42 @@ guid: 74912c26227f44442ad296e25bf7667f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Axe
+    second: {fileID: 2100000, guid: a69526b521c4a5649a21192d6cf72633, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brushed Aluminum 2
+    second: {fileID: 2100000, guid: 65f3e2b2f2ea69241a7a0fa474b92234, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gold.002
+    second: {fileID: 2100000, guid: 6554c69ba06371044bae6bcbb47d73a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Klinge-mitte.001
+    second: {fileID: 2100000, guid: 57815b46af4619d40909b70a494828e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Old Metal Pan.001
+    second: {fileID: 2100000, guid: c76e65af45330ee4a82de38d56e83414, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plaited Leather One Braid
+    second: {fileID: 2100000, guid: 03fdeb40143d682419f447e44be01e2e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shield
+    second: {fileID: 2100000, guid: d01b2d678d3aff849a5ae6d84864f9e1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
