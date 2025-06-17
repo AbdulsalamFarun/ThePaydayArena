@@ -2476,6 +2476,10 @@ PrefabInstance:
       value: -7.111501
       objectReference: {fileID: 0}
     - target: {fileID: 6235466307222058607, guid: 74376bbf42dfd3e489c567a97a2d1cf9, type: 3}
+      propertyPath: stateMachine
+      value: 
+      objectReference: {fileID: 4733279902437149622}
+    - target: {fileID: 6235466307222058607, guid: 74376bbf42dfd3e489c567a97a2d1cf9, type: 3}
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 7108979471336537477}
@@ -5129,6 +5133,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61715537bcf4e8043971a8d59e8460dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4733279902437149622 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2502205139114514567, guid: 74376bbf42dfd3e489c567a97a2d1cf9, type: 3}
+  m_PrefabInstance: {fileID: 1066342094}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827017372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c6e466793a5824ca080af617f46a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &4733279902437149624
