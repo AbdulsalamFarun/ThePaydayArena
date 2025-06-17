@@ -3,6 +3,7 @@ using Unity.Behavior;
 using UnityEngine;
 using Action = Unity.Behavior.Action;
 using Unity.Properties;
+using System.Collections;
 
 [Serializable, GeneratePropertyBag]
 [NodeDescription(name: "LookAtTargetTask", story: "[self] Shlould [Look] at [Target]", category: "Action", id: "6a7b3154cf76622af54f05e50cf87c9e")]
