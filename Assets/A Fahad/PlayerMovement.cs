@@ -5,9 +5,14 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private PlayerStateMachine stateMachine;
     public Vector2 moveInput { get; private set; }
 
     public bool IsAttacking { get; private set; }
+
+    public bool IsBlocking { get; private set; }
+
+    public bool dogeRequested { get; private set; }
 
     public event Action TargetEvent;
     public event Action CancelEvent;
@@ -16,7 +21,6 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.2f;
 
     private bool jumpRequested = false;
-    private bool dogeRequested = false;
     public float jumpForce = 15f;
     public float dogeForce = 5f;
 
@@ -88,13 +92,21 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnDoge(InputAction.CallbackContext context)
     {
-        if (context.performed)
-        {
-            // dogeRequested = true;
-            Debug.Log("Doged");
+            if (context.performed)
+            {
+        // تخبر stateMachine بأتجاه الدّوج حسب مدخلات التحرك الحالية
+        Vector3 direction = new Vector3();
 
-            rb.AddRelativeForce(Vector3.forward * dogeForce, ForceMode.Impulse);
-        }
+        direction += transform.forward * moveInput.y;
+        direction += transform.right * moveInput.x;
+
+        if (direction.sqrMagnitude == 0)
+            direction = transform.forward;
+
+        stateMachine.SwitchState(new PlayerDodgingState(stateMachine, direction));
+
+        Debug.Log("Dodge!");
+            }
 
     }
 
@@ -143,6 +155,20 @@ public class PlayerMovement : MonoBehaviour
         else if (context.canceled)
         {
             IsAttacking = false;
+        }
+    }
+
+        public void OnBlock(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Debug.Log("Block");
+            IsBlocking = true;
+        }
+        else if (context.canceled)
+        {
+            Debug.Log("Cancel Block");
+            IsBlocking = false;
         }
     }
     
