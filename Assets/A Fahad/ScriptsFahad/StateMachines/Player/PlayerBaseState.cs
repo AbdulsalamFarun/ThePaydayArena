@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
-public abstract class PlayerBaseState : State
+public abstract class PlayerBaseState : StateFahad
 {
     protected PlayerStateMachine stateMachine;
 
