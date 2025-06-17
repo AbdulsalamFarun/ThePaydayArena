@@ -67,15 +67,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Main Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ad8e0b38a5a3e4304a4593f3bf03b4ab, type: 2}
-  m_sharedMaterial: {fileID: -3313541477215620330, guid: ad8e0b38a5a3e4304a4593f3bf03b4ab, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 303baa51963aa4fffb23ef545884f289, type: 2}
+  m_sharedMaterial: {fileID: -5968822652999396615, guid: 303baa51963aa4fffb23ef545884f289, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281677253
-  m_fontColor: {r: 0.7735849, g: 0.20799215, b: 0.20799215, a: 1}
+    rgba: 4278190290
+  m_fontColor: {r: 0.8235294, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.9
-  m_fontSizeBase: 33.9
+  m_fontSize: 48.4
+  m_fontSizeBase: 48.4
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.21698111, g: 0.21698111, b: 0.21698111, a: 0.34117648}
+  m_Color: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 0.42745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -281,15 +281,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Try Again '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ad8e0b38a5a3e4304a4593f3bf03b4ab, type: 2}
-  m_sharedMaterial: {fileID: -3313541477215620330, guid: ad8e0b38a5a3e4304a4593f3bf03b4ab, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 303baa51963aa4fffb23ef545884f289, type: 2}
+  m_sharedMaterial: {fileID: -5968822652999396615, guid: 303baa51963aa4fffb23ef545884f289, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281677253
-  m_fontColor: {r: 0.7735849, g: 0.20799215, b: 0.20799215, a: 1}
+    rgba: 4278190289
+  m_fontColor: {r: 0.8207547, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -306,8 +306,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.9
-  m_fontSizeBase: 33.9
+  m_fontSize: 51.99
+  m_fontSizeBase: 51.99
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -362,6 +362,7 @@ GameObject:
   - component: {fileID: 3620909390625592412}
   - component: {fileID: 8993822573347193905}
   - component: {fileID: 1991351570825984815}
+  - component: {fileID: 6921649367610846052}
   m_Layer: 5
   m_Name: Mainmenubutton
   m_TagString: Untagged
@@ -386,8 +387,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -53, y: -283}
-  m_SizeDelta: {x: 240, y: 70}
+  m_AnchoredPosition: {x: 298, y: -192}
+  m_SizeDelta: {x: 350, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3620909390625592412
 CanvasRenderer:
@@ -410,7 +411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -471,6 +472,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6921649367610846052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5866662425258166356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47bdfb273d378454d8ec9257c323d683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalColor: {r: 1, g: 0.11764706, b: 0.11764706, a: 1}
+  highlightColor: {r: 0.90588236, g: 0, b: 0, a: 1}
+  hoverScale: 1.1
+  scaleSpeed: 12
 --- !u!1 &6755810163681664968
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,7 +546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8396226, g: 0.057165798, b: 0, a: 1}
+  m_Color: {r: 0.8490566, g: 0.059513316, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -555,6 +572,7 @@ GameObject:
   - component: {fileID: 7143062860578336294}
   - component: {fileID: 3256611022647989676}
   - component: {fileID: 7046148488735690550}
+  - component: {fileID: 8038091155374240077}
   m_Layer: 5
   m_Name: restartbutton
   m_TagString: Untagged
@@ -579,8 +597,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -53, y: -177}
-  m_SizeDelta: {x: 240, y: 70}
+  m_AnchoredPosition: {x: -411, y: -193}
+  m_SizeDelta: {x: 350, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7143062860578336294
 CanvasRenderer:
@@ -603,7 +621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -664,3 +682,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8038091155374240077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7677200504839195203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47bdfb273d378454d8ec9257c323d683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalColor: {r: 1, g: 0.11792451, b: 0.11792451, a: 1}
+  highlightColor: {r: 0.9056604, g: 0, b: 0, a: 1}
+  hoverScale: 1.1
+  scaleSpeed: 12

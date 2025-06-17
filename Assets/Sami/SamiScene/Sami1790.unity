@@ -581,6 +581,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 2434653617655674477, guid: a81a92fdb2a86490b918a94a667c7f7e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4146884657637082926, guid: a81a92fdb2a86490b918a94a667c7f7e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -674,40 +678,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 686218796}
     m_Modifications:
-    - target: {fileID: 2777735430078648050, guid: a69c2a9eccdee4ea3b95d72b58f058ce, type: 3}
-      propertyPath: m_Color.a
-      value: 0.42745098
-      objectReference: {fileID: 0}
     - target: {fileID: 2900143514465916488, guid: a69c2a9eccdee4ea3b95d72b58f058ce, type: 3}
       propertyPath: m_Name
       value: DeathPanel
       objectReference: {fileID: 0}
     - target: {fileID: 2900143514465916488, guid: a69c2a9eccdee4ea3b95d72b58f058ce, type: 3}
       propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3256611022647989676, guid: a69c2a9eccdee4ea3b95d72b58f058ce, type: 3}
-      propertyPath: m_Type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3256611022647989676, guid: a69c2a9eccdee4ea3b95d72b58f058ce, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 3256611022647989676, guid: a69c2a9eccdee4ea3b95d72b58f058ce, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3256611022647989676, guid: a69c2a9eccdee4ea3b95d72b58f058ce, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3256611022647989676, guid: a69c2a9eccdee4ea3b95d72b58f058ce, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3256611022647989676, guid: a69c2a9eccdee4ea3b95d72b58f058ce, type: 3}
-      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5850191638405781707, guid: a69c2a9eccdee4ea3b95d72b58f058ce, type: 3}
