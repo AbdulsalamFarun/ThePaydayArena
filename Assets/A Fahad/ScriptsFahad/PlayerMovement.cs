@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool IsAttacking { get; private set; }
 
-    public bool IsBlocking;
+    public bool IsBlocking { get; private set; }
 
     public bool dogeRequested { get; private set; }
 
@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
 /// </summary>
 void Update()
 {
-        animator.SetBool("BLOCK Animation", IsBlocking);
+        // animator.SetBool("BLOCK Animation", IsBlocking);
 }
     void FixedUpdate()
     {
@@ -171,14 +171,14 @@ void Update()
     {
         if (context.performed && !IsAttacking)
         {
-            animator.Play("BLOCK Animation");
+            // animator.Play("BLOCK Animation");
 
-            Debug.Log("Block");
+            // Debug.Log("Block");
             IsBlocking = true;
         }
         else if (context.canceled)
         {
-            Debug.Log("Cancel Block");
+            // Debug.Log("Cancel Block");
             IsBlocking = false;
         }
     }

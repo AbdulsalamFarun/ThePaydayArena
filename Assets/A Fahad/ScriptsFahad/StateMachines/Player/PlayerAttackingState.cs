@@ -65,6 +65,12 @@ public class PlayerAttackingState : PlayerBaseState
         if (attack.ComboStateIndex == -1) { return; }
 
         if (normalizedTime < attack.ComboAttackTime) { return; }
+
+            if (attack.ComboStateIndex >= stateMachine.Attacks.Length)
+    {
+        // Debug.LogWarning($"ComboStateIndex {attack.ComboStateIndex} is out of bounds. Max allowed: {stateMachine.Attacks.Length - 1}");
+        return;
+    }
         
         stateMachine.SwitchState(new PlayerAttackingState(stateMachine, attack.ComboStateIndex));
     }
