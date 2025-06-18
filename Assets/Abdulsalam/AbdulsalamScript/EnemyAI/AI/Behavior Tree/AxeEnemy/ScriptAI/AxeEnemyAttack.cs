@@ -27,7 +27,10 @@ public class EnemyAttack : MonoBehaviour
 
         foreach (Collider player in hitPlayers)
         {
-            
+            if(player.TryGetComponent(out IDamageable damageable))
+            {
+                damageable.TakeDamage(damage);
+            }
         }
     }
 
