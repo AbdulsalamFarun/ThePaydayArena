@@ -27,7 +27,7 @@ public class EnemyAttack : MonoBehaviour
 
         foreach (Collider player in hitPlayers)
         {
-            player.GetComponent<PlayerHealth>()?.TakeDamage(damage);
+            
         }
     }
 
