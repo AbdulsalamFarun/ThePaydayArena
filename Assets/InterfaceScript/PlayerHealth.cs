@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     [SerializeField] private PlayerMovement playerMovement;
 
-    private void Aweke() => currentHealth = maxHealth;
+    private void Awake() => currentHealth = maxHealth;
 
     public void TakeDamage(float amount)
     {
