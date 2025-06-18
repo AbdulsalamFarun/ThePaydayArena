@@ -43,20 +43,26 @@ public class PlayerTargetingState : PlayerBaseState
             stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
             return;
         }
+        if (stateMachine.PlayerMovement.IsAttacking)
+        {
+            stateMachine.SwitchState(new PlayerAttackingState(stateMachine, 0));
+            return;
+        }
+        if (stateMachine.PlayerMovement.IsBlocking)
+        {
+            stateMachine.SwitchState(new PlayerBlockingState(stateMachine));
+            return;
+        }
 
-        
+
         Vector3 movement = CalculateMovment();
-        Move(movement * stateMachine.TargetingMovementSpeed , deltaTime);
+        Move(movement * stateMachine.TargetingMovementSpeed, deltaTime);
 
         UpdateAnimator(deltaTime);
         FaceTarget();
 
 
-        if (stateMachine.PlayerMovement.IsAttacking)
-        {
-            stateMachine.SwitchState(new PlayerAttackingState(stateMachine , 0));
-            return;
-        }
+
     }
 
 
