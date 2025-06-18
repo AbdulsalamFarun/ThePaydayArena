@@ -5,9 +5,30 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Sami/SamiScene/UI_MainMenu_Sami.unity
+    guid: 7c87d8e9371b34de9aef4b1457707db7
+  - enabled: 1
+    path: Assets/Ahmed/Ahmed-scene/cutscene.unity
+    guid: 2b2fc2f1c8f850d4d9f6d9eaf37ff27b
+  - enabled: 1
+    path: Assets/Ahmed/Ahmed-scene/lvl1.unity
+    guid: 4e4e25fee1124f642a22ef19140b5fe3
+  - enabled: 1
+    path: Assets/Ahmed/Ahmed-scene/lvl2.unity
+    guid: d6d7c984e22c9e943a3fae585d490edf
+  - enabled: 1
+    path: Assets/Sami/SamiScene/WinGameScene.unity
+    guid: 6731e235cf1d44a4285b02d8899fe5bb
+  - enabled: 1
+    path: Assets/Sami/SamiScene/WinFightScene.unity
+    guid: f19174740f649409fa93c6c0fbb3e1fa
+  - enabled: 1
+    path: Assets/Sami/SamiScene/Sami_Scene1.unity
+    guid: 14a2c64dbd956d346b9f674d144cc297
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 99f9c9493070a9d4c979a8fec7c5a8d3, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
