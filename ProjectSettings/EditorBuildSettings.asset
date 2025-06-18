@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Sami/SamiScene/UI_MainMenu_Sami.unity
-    guid: 7c87d8e9371b34de9aef4b1457707db7
+    path: Assets/Ahmed/Ahmed-scene/FINAL SCENE/UI_MainMenu.unity
+    guid: 08b98f5b969805c4484475c269e9ab76
   - enabled: 1
     path: Assets/Ahmed/Ahmed-scene/FINAL SCENE/cutscene.unity
     guid: 2b2fc2f1c8f850d4d9f6d9eaf37ff27b
