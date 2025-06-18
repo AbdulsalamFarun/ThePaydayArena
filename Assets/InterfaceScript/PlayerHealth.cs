@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
     public float maxHealth = 100f;
+    // [SerializeField] private Animator animator;
     private float currentHealth;
 
     [SerializeField] private PlayerMovement playerMovement;
@@ -13,16 +14,18 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     {
         if (playerMovement.IsBlocking)
         {
+
             Debug.Log("Player Is Blocking");
             return;
         }
+
         currentHealth -= amount;
         Debug.Log("I took damage: " + currentHealth);
         if (currentHealth <= 0)
         {
             Die();
+        } 
         }
-    }
 
     private void Die()
     {

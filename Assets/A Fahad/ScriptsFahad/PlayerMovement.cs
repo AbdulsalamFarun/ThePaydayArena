@@ -5,12 +5,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private Animator animator;
     [SerializeField] private PlayerStateMachine stateMachine;
     public Vector2 moveInput { get; private set; }
 
     public bool IsAttacking { get; private set; }
 
-    public bool IsBlocking { get; private set; }
+    public bool IsBlocking;
 
     public bool dogeRequested { get; private set; }
 
@@ -42,6 +43,14 @@ public class PlayerMovement : MonoBehaviour
         currentSpeed = speed;
     }
 
+
+/// <summary>
+/// Update is called every frame, if the MonoBehaviour is enabled.
+/// </summary>
+void Update()
+{
+        animator.SetBool("BLOCK Animation", IsBlocking);
+}
     void FixedUpdate()
     {
         //Player Movement
@@ -90,25 +99,25 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void OnDoge(InputAction.CallbackContext context)
-    {
-            if (context.performed)
-            {
-        // تخبر stateMachine بأتجاه الدّوج حسب مدخلات التحرك الحالية
-        Vector3 direction = new Vector3();
+    // public void OnDoge(InputAction.CallbackContext context)
+    // {
+    //         if (context.performed)
+    //         {
+    //     // تخبر stateMachine بأتجاه الدّوج حسب مدخلات التحرك الحالية
+    //     Vector3 direction = new Vector3();
 
-        direction += transform.forward * moveInput.y;
-        direction += transform.right * moveInput.x;
+    //     direction += transform.forward * moveInput.y;
+    //     direction += transform.right * moveInput.x;
 
-        if (direction.sqrMagnitude == 0)
-            direction = transform.forward;
+    //     if (direction.sqrMagnitude == 0)
+    //         direction = transform.forward;
 
-        stateMachine.SwitchState(new PlayerDodgingState(stateMachine, direction));
+    //     stateMachine.SwitchState(new PlayerDodgingState(stateMachine, direction));
 
-        Debug.Log("Dodge!");
-            }
+    //     Debug.Log("Dodge!");
+    //         }
 
-    }
+    // }
 
     public void OnSprint(InputAction.CallbackContext context)
     {
@@ -160,8 +169,10 @@ public class PlayerMovement : MonoBehaviour
 
         public void OnBlock(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !IsAttacking)
         {
+            animator.Play("BLOCK Animation");
+
             Debug.Log("Block");
             IsBlocking = true;
         }
