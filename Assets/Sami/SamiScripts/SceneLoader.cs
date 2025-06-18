@@ -26,6 +26,7 @@ public class SceneLoader : MonoBehaviour
         if (loadNextWhenTimelineStops && director != null)
         {
             director.stopped += OnTimelineStopped;
+            director.Play();
         }
     }
 
@@ -60,6 +61,11 @@ public class SceneLoader : MonoBehaviour
             Debug.LogError("❌ اسم المشهد فاضي أو غلط!");
             return;
         }
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadSceneAsync(sceneName);
+    }
+
+    private void OnDisable()
+    {
+        director.stopped -= OnTimelineStopped;
     }
 }
