@@ -18432,7 +18432,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2, y: 0.27766666}
   m_AnchorMax: {x: 0.33754164, y: 0.349}
-  m_AnchoredPosition: {x: -195, y: 25.279999}
+  m_AnchoredPosition: {x: -195, y: 25.28003}
   m_SizeDelta: {x: -87, y: -7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1468438371
@@ -21557,9 +21557,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuScene: MainMenu
-  playScene: Ahmed-test-payday areana
+  playScene: cutscene
   optionsScene: Options
   creditsScene: Credits
+  director: {fileID: 0}
+  loadNextWhenTimelineStops: 0
 --- !u!4 &1697546375
 Transform:
   m_ObjectHideFlags: 0
