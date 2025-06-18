@@ -1609,7 +1609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuScene: UI_MainMenu_Sami
-  playScene: lvl1
+  playScene: lvl3
   optionsScene: Options
   creditsScene: Credits
   director: {fileID: 0}
