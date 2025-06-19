@@ -119,6 +119,28 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &21555662 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4514033782002187857, guid: a81a92fdb2a86490b918a94a667c7f7e, type: 3}
+  m_PrefabInstance: {fileID: 4685135968409013203}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &83405270 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5195899364624314060, guid: a81a92fdb2a86490b918a94a667c7f7e, type: 3}
+  m_PrefabInstance: {fileID: 4685135968409013203}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &620762252 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4146884657637082926, guid: a81a92fdb2a86490b918a94a667c7f7e, type: 3}
@@ -525,10 +547,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff3aa10c0daee4c1ebb7d142050c5a48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuScene: UI_MainMenu_Sami
+  mainMenuScene: UI_MainMenu
   playScene: lvl1
   optionsScene: Options
-  creditsScene: Credits
+  creditsScene: Credits Scene
   director: {fileID: 0}
   loadNextWhenTimelineStops: 0
 --- !u!4 &2097918833
@@ -657,6 +679,14 @@ PrefabInstance:
       propertyPath: m_Navigation.m_Mode
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2810026937790203249, guid: a81a92fdb2a86490b918a94a667c7f7e, type: 3}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 21555662}
+    - target: {fileID: 2810026937790203249, guid: a81a92fdb2a86490b918a94a667c7f7e, type: 3}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 83405270}
     - target: {fileID: 2810026937790203249, guid: a81a92fdb2a86490b918a94a667c7f7e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1

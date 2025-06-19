@@ -91,7 +91,7 @@ public class CreditManager : MonoBehaviour
     
     // مثلاً: عرض رسالة النهاية (تحتاج تكون UI ثانية غير creditsText اللي أخفيته)
     // أو تروح للمينيو
-    SceneManager.LoadSceneAsync("UI_MainMenu_Sami");
+    SceneManager.LoadSceneAsync("UI_MainMenu");
 
     // أو تفعل زر
     // yourButton.SetActive(true);

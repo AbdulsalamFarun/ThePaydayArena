@@ -21604,7 +21604,7 @@ MonoBehaviour:
   mainMenuScene: MainMenu
   playScene: cutscene
   optionsScene: Options
-  creditsScene: Credits
+  creditsScene: Credits Scene
   director: {fileID: 0}
   loadNextWhenTimelineStops: 0
 --- !u!4 &1697546375
