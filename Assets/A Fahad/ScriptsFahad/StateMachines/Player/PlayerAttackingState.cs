@@ -13,6 +13,8 @@ public class PlayerAttackingState : PlayerBaseState
 
     public override void Enter()
     {
+        SoundManager.instance.Play("PlayerSlash");
+
         stateMachine.Animator.CrossFadeInFixedTime(attack.AnimationName, attack.TransitionDuration);
     }
 

@@ -8,7 +8,7 @@ public class PlayerTargetingState : PlayerBaseState
 
     private readonly int TargetingRightHash = Animator.StringToHash("TargetingRight");
 
-
+    private AxeEnemyHealth lastKnownTargetHealth;
     public PlayerTargetingState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
@@ -38,6 +38,7 @@ public class PlayerTargetingState : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
+        HandleHealthBar();
         if (stateMachine.Targeter.CurrentTarget == null)
         {
             stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
@@ -71,7 +72,10 @@ public class PlayerTargetingState : PlayerBaseState
     {
         stateMachine.PlayerMovement.CancelEvent -= OnCancel;
 
-
+        if (stateMachine.Targeter.CurrentTarget == null && lastKnownTargetHealth != null)
+        {
+            lastKnownTargetHealth.HideHealthBar();
+        }
         // ----------------------------------------------------
         // إلغاء تفعيل كاميرا الاستهداف وإعادة تفعيل FreeLookCamera
         // ----------------------------------------------------
@@ -87,6 +91,35 @@ public class PlayerTargetingState : PlayerBaseState
         }
 
 
+    }
+
+    private void HandleHealthBar()
+    {
+        // Try to get the health component from the current target
+        AxeEnemyHealth currentTargetHealth = null;
+        if (stateMachine.Targeter.CurrentTarget != null)
+        {
+            currentTargetHealth = stateMachine.Targeter.CurrentTarget.GetComponent<AxeEnemyHealth>();
+        }
+
+        // If the target has changed
+        if (currentTargetHealth != lastKnownTargetHealth)
+        {
+            // Hide the old one if it exists
+            if (lastKnownTargetHealth != null)
+            {
+                lastKnownTargetHealth.HideHealthBar();
+            }
+
+            // Show the new one if it exists
+            if (currentTargetHealth != null)
+            {
+                currentTargetHealth.ShowHealthBar();
+            }
+
+            // Update the last known target
+            lastKnownTargetHealth = currentTargetHealth;
+        }
     }
 
     private void OnCancel()

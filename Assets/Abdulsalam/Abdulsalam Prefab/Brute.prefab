@@ -2581,7 +2581,6 @@ GameObject:
   - component: {fileID: 4491544246688486332}
   - component: {fileID: 2375805159772029342}
   - component: {fileID: 2044418676625475376}
-  - component: {fileID: 324870671484162392}
   - component: {fileID: 7972668005885593516}
   - component: {fileID: 7428756592064210984}
   - component: {fileID: 3089655843368978633}
@@ -2653,20 +2652,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc491e569a614e64096bd3425f4000c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &324870671484162392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5110602303698878902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 780b60aea548739438f70a204b352e82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  enemyBlock: {fileID: 2044418676625475376}
 --- !u!95 &7972668005885593516
 Animator:
   serializedVersion: 7

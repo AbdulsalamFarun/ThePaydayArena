@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
@@ -8,11 +9,25 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     private float currentHealth;
     private bool IsInvunerable = false;
 
+    
+
     public GameObject Panel;
 
     [SerializeField] private PlayerMovement playerMovement;
 
-    private void Awake() => currentHealth = maxHealth;
+    public Slider healthSlider;
+
+    private void Awake() 
+    {
+        currentHealth = maxHealth;
+        if (healthSlider != null)
+        {
+            healthSlider.maxValue = maxHealth;
+            healthSlider.value = currentHealth;
+        }
+
+    }
+    
 
     public void SetInvunerable(bool IsInvunerable)
     {
@@ -26,6 +41,15 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         if (IsInvunerable) { return; }
 
         currentHealth -= amount;
+        SoundManager.instance.Play("PlayerHit");
+
+
+        if (healthSlider != null)
+        {
+            healthSlider.value = currentHealth;
+        }
+
+
         Debug.Log("I took damage: " + currentHealth);
         if (currentHealth <= 0)
         {
@@ -37,10 +61,12 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private void Die()
     {
-
+        SoundManager.instance.Play("DeathPanal");
         Panel.SetActive(true);
         Time.timeScale = 0f;
 
         Debug.Log("Player has died.");
     }
+
+
 }
