@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Ahmed/Ahmed-scene/cutscene.unity
     guid: 2b2fc2f1c8f850d4d9f6d9eaf37ff27b
   - enabled: 1
-    path: Assets/Ahmed/Ahmed-scene/lvl1.unity
+    path: Assets/Ahmed/Ahmed-scene/lvl1 INFO.unity
     guid: 4e4e25fee1124f642a22ef19140b5fe3
   - enabled: 1
     path: Assets/Ahmed/Ahmed-scene/lvl2-back up.unity
