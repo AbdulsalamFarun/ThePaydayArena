@@ -1,46 +1,36 @@
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
-public class AxeEnemyHealth : MonoBehaviour, IDamageable
+// 1. Notice it now inherits from EnemyHealthBase instead of MonoBehaviour
+public class AxeEnemyHealth : EnemyHealthBase, IDamageable
 {
-    public float maxHealth = 100f;
-    private float currentHealth;
-
     private Animator animator;
 
-
-    public Slider healthSlider;
-
-    private void Awake()
+    // 2. We override the parent's Awake method to add our own logic
+    protected override void Awake()
     {
         animator = GetComponent<Animator>();
+        // 3. Set health from the value in the parent class. This will now correctly be 100.
         currentHealth = maxHealth;
 
-        if (healthSlider != null)
-        {
-            healthSlider.maxValue = maxHealth;
-            healthSlider.value = currentHealth;
-
-            HideHealthBar();
-        }
+        // 4. This calls the Awake() method in the parent (EnemyHealthBase)
+        // to set up the health bar. VERY IMPORTANT!
+        base.Awake();
     }
 
     public void TakeDamage(float amount)
     {
+        if (currentHealth <= 0) return;
 
         SoundManager.instance.Play("EnemyHit");
-
         animator.SetTrigger("Hit");
-
         currentHealth -= amount;
 
+        // 5. Update the slider's value (slider is inherited from the parent)
         if (healthSlider != null)
         {
             healthSlider.value = currentHealth;
         }
-        Debug.Log("Enemy took damage: " + currentHealth);
 
         if (currentHealth <= 0)
         {
@@ -52,34 +42,13 @@ public class AxeEnemyHealth : MonoBehaviour, IDamageable
     {
         Debug.Log("Enemy has died.");
 
-        if (healthSlider != null)
-        {
-            healthSlider.gameObject.SetActive(false);
-        }
+        HideHealthBar(); // 6. We can call HideHealthBar() because we inherit it
 
         gameObject.SetActive(false);
-
-        // Disable colliders to avoid being hit again
         foreach (Collider col in GetComponentsInChildren<Collider>())
         {
             col.enabled = false;
         }
         SceneManager.LoadScene("WinFightScene-LVL1");
     }
-
-    public void ShowHealthBar()
-    {
-        if (healthSlider != null)
-        {
-            healthSlider.gameObject.SetActive(true);
-        }
-    }
-    public void HideHealthBar()
-    {
-        if (healthSlider != null)
-        {
-            healthSlider.gameObject.SetActive(false);
-        }
-    }
-
 }

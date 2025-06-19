@@ -8,7 +8,7 @@ public class PlayerTargetingState : PlayerBaseState
 
     private readonly int TargetingRightHash = Animator.StringToHash("TargetingRight");
 
-    private AxeEnemyHealth lastKnownTargetHealth;
+    private EnemyHealthBase lastKnownTargetHealth;
     public PlayerTargetingState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
@@ -96,11 +96,13 @@ public class PlayerTargetingState : PlayerBaseState
     private void HandleHealthBar()
     {
         // Try to get the health component from the current target
-        AxeEnemyHealth currentTargetHealth = null;
+        EnemyHealthBase currentTargetHealth = null;
         if (stateMachine.Targeter.CurrentTarget != null)
         {
-            currentTargetHealth = stateMachine.Targeter.CurrentTarget.GetComponent<AxeEnemyHealth>();
+            currentTargetHealth = stateMachine.Targeter.CurrentTarget.GetComponent<EnemyHealthBase>();
         }
+
+
 
         // If the target has changed
         if (currentTargetHealth != lastKnownTargetHealth)
