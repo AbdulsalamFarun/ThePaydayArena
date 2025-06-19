@@ -23,13 +23,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Ahmed/Ahmed-scene/FINAL SCENE/lvl2.unity
     guid: 519833b32ed5478429ae0ea0858bc27e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Ahmed/Ahmed-scene/FINAL SCENE/WinFightScene-LVL2.unity
     guid: fbc3828ecc12dda48ae3d7adcaab9d39
   - enabled: 0
     path: Assets/Ahmed/Ahmed-scene/FINAL SCENE/lvl3.unity
     guid: 86c7f0b5dc98602448efa616eca598c4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Ahmed/Ahmed-scene/FINAL SCENE/WinFightScene-LVL3.unity
     guid: be4d6673af6489c4398ad4dedcc56eea
   - enabled: 1

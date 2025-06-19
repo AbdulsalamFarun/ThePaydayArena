@@ -10,7 +10,9 @@ using TMPro;
 [RequireComponent(typeof(RectTransform))]
 public class ButtonHoverEffect : MonoBehaviour,
                                  IPointerEnterHandler,
-                                 IPointerExitHandler
+                                 IPointerExitHandler,
+                                 ISelectHandler,
+                                 IDeselectHandler
 {
     /*----------- إعدادات الألوان -----------*/
     [Header("Color Settings")]
@@ -69,6 +71,24 @@ public class ButtonHoverEffect : MonoBehaviour,
 
     /*----------- خروج المؤشر -----------*/
     public void OnPointerExit(PointerEventData eventData)
+    {
+        if (text != null)
+            text.color = normalColor;
+
+        // ارجع للحجم الأصلي
+        targetScale = initialScale;
+    }
+
+    public void OnSelect(BaseEventData eventData)
+    {
+        if (text != null)
+            text.color = highlightColor;
+
+        // حجم الزر = الحجم الأصلي × نسبة التكبير
+        targetScale = initialScale * hoverScale;
+    }
+
+    public void OnDeselect(BaseEventData eventData)
     {
         if (text != null)
             text.color = normalColor;
