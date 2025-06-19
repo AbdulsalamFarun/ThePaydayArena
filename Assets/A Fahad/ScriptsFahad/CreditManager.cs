@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CreditManager : MonoBehaviour
 {
@@ -88,9 +89,9 @@ public class CreditManager : MonoBehaviour
     // بعد الانتهاء، تقدر تروح لمشهد أو تظهر رسالة
     Debug.Log("انتهت الكريديت!");
     
-    // مثلاً: عرض رسالة النهاية (تحتاج تكون UI ثانية غير creditText اللي أخفيته)
+    // مثلاً: عرض رسالة النهاية (تحتاج تكون UI ثانية غير creditsText اللي أخفيته)
     // أو تروح للمينيو
-    // SceneManager.LoadScene("MainMenu");
+    SceneManager.LoadSceneAsync("UI_MainMenu_Sami");
 
     // أو تفعل زر
     // yourButton.SetActive(true);
